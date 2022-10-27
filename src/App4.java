@@ -5,6 +5,7 @@ import javafx.stage.Stage;
 public class App4 extends Application {
 
     public void start(Stage primaryStage) {
+        System.out.println("Hello?");
         cs331FruitNinjaFrame frame = new cs331FruitNinjaFrame(primaryStage);
 
         // Your code goes here!!
