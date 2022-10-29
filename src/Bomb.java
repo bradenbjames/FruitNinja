@@ -5,7 +5,13 @@ public class Bomb extends cs331Bomb {
         this.setImage();
     }
 
-    public void makeBomb() {
+    public int chop() {
+        this.explode();
+        return 0;
+    }
+
+    public void move() {
         this.moveBomb();
     }
+
 }
