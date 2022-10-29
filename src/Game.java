@@ -17,20 +17,36 @@ public class Game extends cs331FruitNinjaGame {
     @Override
     public Object launchItem() {
         // YOUR code goes here
-        Bomb b = new Bomb();
         int lower = 0;
         int upper = 4;
         int r = (int) (Math.random() * (upper - lower)) + lower;
         System.out.println(r);
         switch (r) {
             case 0:
-                b.moveBomb();
-
-                return b;
+                Bomb a = new Bomb();
+                a.moveBomb();
+                a.explode();
+                return a;
             case 1:
+                Pear b = new Pear();
+                b.ripen();
+                b.wash();
+                return b;
             case 2:
+                Apple c = new Apple();
+                c.ripen();
+                c.wash();
+                return c;
             case 3:
+                Lemon d = new Lemon();
+                d.ripen();
+                d.wash();
+                return d;
             case 4:
+                Peach e = new Peach();
+                e.ripen();
+                e.wash();
+                return e;
             default:
         }
         // Bomb b = new Bomb();
@@ -38,7 +54,7 @@ public class Game extends cs331FruitNinjaGame {
         // Apple a = new Apple();
         // Peach pe = new Peach();
         // Lemon l = new Lemon();
-        return b;
+        return null;
     }
 
     // Do not modify anything below this line
