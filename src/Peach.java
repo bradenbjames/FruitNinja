@@ -6,6 +6,8 @@ public class Peach extends cs331Fruit implements IChoppable {
 
     public Peach() {
         this.setImage(Constants.PEACH_PATH);
+        this.ripen();
+        this.wash();
     }
 
     public int chop() {

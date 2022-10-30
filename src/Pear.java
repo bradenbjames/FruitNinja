@@ -6,6 +6,8 @@ public class Pear extends cs331Fruit implements IChoppable {
 
     public Pear() {
         this.setImage(Constants.PEAR_PATH);
+        this.ripen();
+        this.wash();
     }
 
     public int chop() {

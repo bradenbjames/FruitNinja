@@ -7,6 +7,8 @@ public class Apple extends cs331Fruit implements IChoppable {
 
     public Apple() {
         this.setImage(Constants.APPLE_PATH);
+        this.ripen();
+        this.wash();
     }
 
     public int chop() {

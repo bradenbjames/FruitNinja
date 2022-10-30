@@ -10,13 +10,11 @@ public class App4 extends Application {
         cs331FruitNinjaFrame frame = new cs331FruitNinjaFrame(primaryStage);
 
         // Your code goes here!!
-        Game game = new Game();
-        frame.addGame(game);
-        cs331Blade b = new cs331Blade("1");
-        game.addBlade(b);
         cs331ScoreController c = new cs331ScoreController();
+        cs331Blade b = new cs331Blade("1");
+        Game game = new Game(c, b);
+        frame.addGame(game);
         frame.setTop(c);
-
         game.startGame();
     }
 

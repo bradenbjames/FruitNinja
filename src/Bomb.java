@@ -1,6 +1,6 @@
 import fruitNinjaHelper.cs331Bomb;
 
-public class Bomb extends cs331Bomb {
+public class Bomb extends cs331Bomb implements IChoppable {
     public Bomb() {
         this.setImage();
     }

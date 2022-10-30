@@ -6,6 +6,8 @@ public class Lemon extends cs331Fruit implements IChoppable {
 
     public Lemon() {
         this.setImage(Constants.LEMON_PATH);
+        this.ripen();
+        this.wash();
     }
 
     public int chop() {
@@ -18,8 +20,6 @@ public class Lemon extends cs331Fruit implements IChoppable {
     @Override
     public void move() {
         this.moveFruit();
-        // TODO Auto-generated method stub
-
     }
 
 }

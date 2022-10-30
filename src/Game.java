@@ -1,59 +1,48 @@
+import fruitNinjaHelper.cs331Blade;
 import fruitNinjaHelper.cs331FruitNinjaGame;
 import fruitNinjaHelper.cs331ScoreController;
 
 public class Game extends cs331FruitNinjaGame {
     cs331ScoreController cs;
+    cs331Blade b;
 
     // You may need to add constructor
-    public Game() {
-        // ????
+    public Game(cs331ScoreController cs, cs331Blade b) {
+        this.cs = cs;
+        this.b = b;
+        this.addBlade(b);
     }
 
-    public void updateChoppable(Object o) {
+    public void updateChoppable(IChoppable o) {
+        o.move();
         // Your code goes here
-
+        if (b.checkIntersection(o)) {
+            this.cs.addToScore(o.chop());
+        }
     }
 
     @Override
-    public Object launchItem() {
+    public IChoppable launchItem() {
         // YOUR code goes here
-        int lower = 0;
-        int upper = 4;
-        int r = (int) (Math.random() * (upper - lower)) + lower;
-        System.out.println(r);
-        switch (r) {
+
+        switch ((int) (Math.random() * 5)) {
             case 0:
-                Bomb a = new Bomb();
-                a.moveBomb();
-                a.explode();
+                Apple a = new Apple();
                 return a;
             case 1:
-                Pear b = new Pear();
-                b.ripen();
-                b.wash();
-                return b;
+                Lemon l = new Lemon();
+                return l;
             case 2:
-                Apple c = new Apple();
-                c.ripen();
-                c.wash();
-                return c;
+                Pear p = new Pear();
+                return p;
             case 3:
-                Lemon d = new Lemon();
-                d.ripen();
-                d.wash();
-                return d;
+                Peach pe = new Peach();
+                return pe;
             case 4:
-                Peach e = new Peach();
-                e.ripen();
-                e.wash();
-                return e;
+                Bomb b = new Bomb();
+                return b;
             default:
         }
-        // Bomb b = new Bomb();
-        // Pear p = new Pear();
-        // Apple a = new Apple();
-        // Peach pe = new Peach();
-        // Lemon l = new Lemon();
         return null;
     }
 
